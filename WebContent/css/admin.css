@@ -1,0 +1,69 @@
+@CHARSET "UTF-8";
+
+body {
+	background: url('../img/stripes.png') repeat #fff;
+	font-family: "Trebuchet MS", Tahoma, Arial;
+}
+
+#wrap {
+	min-width:1000px;
+	width:80%;
+	margin:0px auto;
+}
+
+#holder {
+	background-color:#948c75;
+	padding:6px;
+}
+
+#content {
+	min-height: 600px;
+	background-color:#fff;
+	overflow: auto;
+}
+
+#menu,
+#menu a {
+	color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#menu ul {
+	list-style-type: none;
+	padding: 0px;
+	margin:6px 0px 0px 0px;
+}
+
+#menu ul li {
+	display: inline-block;
+	background: url('../img/stripes.png') repeat #948c75;
+	padding:15px 60px;
+	margin:0px;
+}
+
+table tr td,
+table th td {
+	font-size: 90%;
+	padding:2px;
+}
+
+table tr.customer td,
+table tr.processing td {
+	background-color:#e4e7ff;
+} 
+
+table tr.seller td,
+table tr.shipped td {
+	background-color:#e7ffe4;
+} 
+
+table tr.deleted td,
+table tr.cancelled td {
+	background-color: #ffe4e4;
+	color:#cc3333;
+}
+
+table tr:hover td{
+	background-color: #fff9e4;
+} 

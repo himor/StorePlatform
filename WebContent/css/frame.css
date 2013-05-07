@@ -1,0 +1,162 @@
+body {
+	margin:0px;
+	padding:0px;
+	background-color:#99b2b7;
+	color:#574b3b; font-family: "Trebuchet MS", Arial, Helvetica, sans-serif; font-size: 85%;
+}
+
+div {
+	margin:0px;
+	padding:0px;
+}
+
+#container {
+	width:100%;
+	height:100%;
+}
+
+#header1 {
+	background-color:#99b2b7;
+	display:block;
+	width:100%;
+	height:150px;
+}
+
+#header-line {
+	display:block;
+	width:100%;
+	height:4px;
+	background-color:#948c75;
+}
+
+#top-content {
+	min-width:1050px;
+	max-width:1200px;
+	height:150px;
+	margin:auto;
+}
+
+#logo-holder {
+	padding-top:20px;
+	width:280px;
+	float:left;
+}
+
+#info-holder {
+	padding-top:20px;
+	width:280px;
+	float:right;
+}
+
+#search-holder {
+	padding-top:60px;
+	margin:auto;
+	width:440px;
+}
+
+#search-text {
+	width:100%;
+}
+
+#sell-link {
+	display:block;
+	float:right;
+	height:21px;
+	width:228px;
+	background-image:url(../img/sell.png); 
+}
+
+#sell-link:hover {
+	background-image:url(../img/sell-hi.png); 
+}
+
+#login-link {
+	display:inline-block;
+	float:right;
+	height:42px;
+	width:122px;
+	margin:20px 20px 0px 0px;
+	background-image:url(../img/login.png); 
+}
+
+#login-link:hover {
+	background-image:url(../img/login-hi.png); 
+}
+
+#signup-link {
+	display:inline-block;
+	float:right;
+	height:42px;
+	width:122px;
+	margin-top:20px;
+	background-image:url(../img/signup.png); 
+}
+
+#signup-link:hover {
+	background-image:url(../img/signup-hi.png); 
+}
+
+#mid-content-holder {
+	width:100%;
+	background-color:#d9ceb2;
+}
+
+#mid-content {
+	min-width:1050px;
+	max-width:1200px;
+	min-height:500px;
+	margin:auto;
+}
+
+#sidebar {
+	background-color:#d5ded9;
+	display: block;
+	float: left;
+	width: 210px;
+	min-height:500px;
+	padding: 10px 10px;
+	font-size: 1.1em;
+}
+
+#sidebar a {
+	font-weight: bold;
+}
+
+#content {
+	display:block;
+	min-height:500px;
+	padding: 10px 10px;
+	margin-left:230px;
+}
+
+#footer1 {
+	background-color:#99b2b7;
+	display:block;
+	width:100%;
+	height:100px;
+}
+
+#header-line {
+	display:block;
+	width:100%;
+	height:4px;
+	background-color:#948c75;
+}
+
+#btm-content {
+	min-width:1000px;
+	max-width:1200px;
+	height:100px;
+	margin:auto;
+	font-size:85%;
+	padding-top:10px;
+}
+
+a {
+	color: #574b3b;
+}
+
+a:hover {
+	color: #7a6a53;
+	text-decoration: none;
+}

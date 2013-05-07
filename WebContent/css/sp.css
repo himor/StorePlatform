@@ -1,0 +1,305 @@
+.texts {
+	font-size: 1.2em;
+}
+
+.heads {
+	font-weight: normal !important;
+}
+
+form.loginform {
+	margin: auto;
+	width:600px;
+}
+
+form.loginform label {
+	display:inline-block;
+	width: 100px;
+	text-align:right;
+	margin-right:10px;
+}
+
+.error {
+	display:block;
+	background-color:#F99;
+	color:#000;
+	padding:10px 20px;
+	border-radius:10px;
+	margin-bottom:20px;
+	font-size: 1em;
+}
+
+.success {
+	display:block;
+	background-color:#9f9;
+	color:#000;
+	padding:10px 20px;
+	border-radius:10px;
+	margin-bottom:20px;
+	font-size: 1em;
+}
+
+#uInfoHolder {
+	display:block;
+ 	clear:both;
+	padding:0px 10px;
+	color:#574b3b;
+	background-color:#d5ded9;
+	border-radius:10px;
+}
+
+#uInfoHolder p {
+	padding-top:8px;
+	padding-bottom:5px;
+}
+
+span.bright {
+	display:inline-block;
+	padding:5px 10px;
+	background-color:#F99;
+	border-radius:10px;
+}
+
+#theBar {
+	float:right;
+}
+
+#acctOpenChoice a {
+	display: inline-block;
+	margin-right:20px;
+	padding: 20px 30px;
+	background-color:#d5ded9;
+	border-radius: 10px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 1.4em;
+}
+
+#sidebar a {
+	display: block;
+	text-decoration: none;
+	padding:5px 0px;
+	width:100%;
+	font-weight: normal;
+	font-size: 1.3em;
+	text-transform: uppercase;
+}
+
+#sidebar a:hover {
+	padding-left:5px;
+	color:#faefd3;
+	background-color:#99b2b7;
+}
+
+div.item {
+	display:inline-block;
+	margin-right:10px;
+	margin-bottom:10px;
+	background-color:#d5ded9;
+	border-radius:10px;
+	padding:20px;
+	width:185px;
+	height:180px;
+}
+
+div.item a {
+	text-decoration:none;
+}
+
+div.item span.name {
+	display:block;
+	font-size:1.1em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 100%;
+}
+
+div.item span.price {
+	display:block;
+	float:right;
+}
+
+div.item img {
+	max-height:130px;
+	max-width:160px;
+	border:none;
+	margin:10px auto;
+	display:block;
+}
+
+#nav-bar { list-style-type:none; margin:10px auto 10px; padding:0px;max-width:390px;}
+#nav-bar li {display:inline; margin:0px 5px; padding:0px;}
+#nav-bar li a {display:inline-block; text-decoration:none;
+		padding:5px 10px;color:#574b3b; font-weight:bold; text-transform: uppercase;
+		border:1px #d5ded9 solid; border-radius:5px;}
+#nav-bar li a:hover,
+#nav-bar li a.active {background-color:#d5ded9;}
+
+.uaform {
+	display:block;
+	width:90%;
+	margin-top:20px;
+	margin-left:20px;
+}
+
+.uaform label {
+	display: inline-block;
+	width: 150px;
+	margin-right:10px;
+	margin-left:10px;
+	text-align:right;
+}
+
+form label {
+	font-size: 1em;
+}
+
+.leftItemContainer {
+	display: block;
+	width: 300px;
+	float: left;
+	text-align: center;
+}
+
+.rightItemContainer {
+	display: block;
+	width: 600px;
+	margin-left:310px;
+}
+
+.lonely {
+	display: block;
+	width: 900px;
+	margin-left:20px;
+}
+
+.bottomItemContainer {
+	margin-top:10px;
+}
+
+.leftItemContainer img,
+img.item {
+	max-width:260px;
+	max-height:260px;
+	margin:0px auto 20px auto;
+	padding:10px;
+	border-radius: 10px;
+	background-color: #fff;
+	}
+
+img.item {
+	max-width:140px;
+	max-height:160px;
+}
+
+.leftItemContainer span.price {
+	font-size:2em;
+	font-style: italic;
+}
+
+.rightItemContainer span.name,
+span.nameName {
+	font-size:2em;
+	display: block;
+}
+
+.rightItemContainer span.type,
+span.typeType {
+	font-size:1em;
+	display: block;
+}
+
+.bright {
+	padding:10px;
+	background-color: #eee;
+}
+
+.bright-round {
+	padding:10px;
+	border: 1px #eee solid;
+	margin:5px 0px;
+	border-radius: 5px;
+}
+
+form.bill label {
+	display:inline-block;
+	width: 150px;
+	text-align:right;
+	margin-right:10px;
+	font-size: .9em;
+}
+
+.composeReview {
+	background-color: #ddd;
+	padding: 10px;
+	border-radius: 5px;
+	display:none;
+}
+
+.composeReview textarea {
+	width: 98%;
+	height:130px;
+}
+
+span.fixed150 {
+	display:inline-block;
+	width:150px;
+	font-size: 1em !important;
+	text-align:right;
+	float:right;
+}
+
+p.nonbright {
+	display:block;
+	padding:5px 10px;
+	border-radius:10px;
+	background-color: #eadfc3;
+}
+
+p.isbright {
+	display:block;
+	padding:5px 10px;
+	border-radius:10px;
+	background-color: #eee;
+}
+
+span.fixed100 {
+	display:inline-block;
+	width:100px;
+}
+
+span.fixed50 {
+	display:inline-block;
+	width:50px;
+}
+
+div.itemsImage {
+	float:left;
+	width:140px;
+	height:160px;
+	margin-bottom:40px;
+}
+
+div.itemsInfo {
+	margin-left:180px;
+	min-height:200px;
+	width:500px;
+}
+
+span.itemsName {
+	display:inline-block;
+	min-width: 100px;
+	margin-right:10px;
+}
+
+span.itemsStuff {
+	display:inline-block;
+}
+
+.composeReview label,
+.addItem label  {
+	min-width:100px;
+	display:inline-block;
+	margin-bottom:10px;
+}

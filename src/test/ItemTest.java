@@ -8,7 +8,7 @@ import org.junit.Test;
 import sp.*;
 
 public class ItemTest {
-  
+	
 	public static int SELLER = 2; // seller ID for testing. must contain items
 	public static int ORDER  = 1; // order ID
 	public static int NUMBER = 5;
