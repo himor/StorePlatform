@@ -26,6 +26,7 @@
 <%!boolean showButtons = true;%>
 <%@ include file="header.jsp"%>
 	<%
+	int placed = 0;
 	if (sess_uid.equals("0")) { // send user to the login page
 		response.sendRedirect("login.jsp?redirect=buy&redid="+id);
 		return;
@@ -91,8 +92,10 @@
 		
 		session.setAttribute("cart" + sessId, new Cart()); // destroy the cart
 		
-		response.sendRedirect("history.jsp?placed");
-		return;		
+		//response.sendRedirect("history.jsp?placed");
+		//return;
+		
+		placed = 1;
 	}
 %>
 
@@ -137,7 +140,7 @@
 	  	
 		</table>
 		
-		<form class="bill" method="post" action="buy.jsp">
+		<form class="bill" method="post" id="buyform" action="buy.jsp">
 		<table class="table table-bordered texts" style="background-color: #eee;">
 		<tr>
 		<td style="width:50%;"><h3 class="heads" style="text-transform: uppercase;">Billing address</h3>
@@ -186,9 +189,35 @@
 			
 			<a href="https://www.paypal.com/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1060, height=700'); return false;"><img src="https://www.paypalobjects.com/webstatic/mktg/logo/bdg_payments_by_pp_2line.png" border="0" alt="Payments by PayPal"></a>
 			
-			<br><br>
+			<button class="btn btn-primary" type="submit"><i class="icon-shopping-cart icon-white"></i> Place the order</button>			
 			<input type="hidden" name="place" value="1" />
-			<button class="btn btn-primary" type="submit"><i class="icon-shopping-cart icon-white"></i> Place the order</button>
+			</form>
+			
+			<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post"
+				name="paypal_form" id="paypal_form">
+				<input type="hidden" name="cmd" value="_cart">
+				<input type="hidden" name="upload" value="1">
+				
+				<input type="hidden" name="business" value="himor.cre@gmail.com">
+				<% for(int i = 0; i<its.length; i++) { %>
+					<input type="hidden" name="item_name_<% out.print(i+1); %>" value="<% out.print(its[i].getName()); %>">
+					<input type="hidden" name="amount_<% out.print(i+1); %>" value="<% out.print(its[i].getPrice()); %>">
+					<input type="hidden" name="quantity_<% out.print(i+1); %>" value="<% out.print(its[i].getCount()); %>">
+				<%} %>
+
+
+				<input id="presubmit" type="image" style="display:none;"
+				src="https://www.sandbox.paypal.com/en_US/i/btn/btn_xpressCheckout.gif" border="0"
+				name="submit" alt="PayPal - The safer, easier way to pay online!">
+				<img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif"
+				width="1" height="1">
+				</form>
+			
+			
+			
+			<br><br>
+			
+<!-- 			<button class="btn btn-primary" type="submit"><i class="icon-shopping-cart icon-white"></i> Place the order</button> -->
 			
 		</div>
 		</td>
@@ -197,7 +226,7 @@
 		
 		
 		
-		</form>
+<!-- 		</form> -->
 		</div>
 	
 	<div class="bottomItemContainer">
@@ -217,9 +246,13 @@
 </div>
 
 <script>
-$(document).ready(function(){ 
+$(document).ready(function(){
 	
-	$("form").submit(function() {
+	<% if (placed == 1) {%>
+		$("form#paypal_form").submit();
+	<% }%>
+	
+	$("form#buyform").submit(function() {
 		$('input[name=s-fname], input[name=s-lname], input[name=s-city], input[name=s-zip], input[name=s-street]').removeAttr("disabled");
 	});
 	

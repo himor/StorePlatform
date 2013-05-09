@@ -10,6 +10,24 @@
 <%@ page import="sp.*"%>
 <%@ page import="org.apache.jasper.tagplugins.jstl.core.ForEach" %>
 
+<%@ page import="org.apache.*" %>
+
+<%@ page import="com.amazonaws.AmazonClientException" %>
+<%@ page import="com.amazonaws.AmazonServiceException" %>
+<%@ page import="com.amazonaws.auth.ClasspathPropertiesFileCredentialsProvider" %>
+<%@ page import="com.amazonaws.regions.Region" %>
+<%@ page import="com.amazonaws.regions.Regions" %>
+<%@ page import="com.amazonaws.services.s3.AmazonS3" %>
+<%@ page import="com.amazonaws.services.s3.AmazonS3Client" %>
+<%@ page import="com.amazonaws.services.s3.model.Bucket" %>
+<%@ page import="com.amazonaws.services.s3.model.GetObjectRequest" %>
+<%@ page import="com.amazonaws.services.s3.model.ListObjectsRequest" %>
+<%@ page import="com.amazonaws.services.s3.model.ObjectListing" %>
+<%@ page import="com.amazonaws.services.s3.model.PutObjectRequest" %>
+<%@ page import="com.amazonaws.services.s3.model.S3Object" %>
+<%@ page import="com.amazonaws.services.s3.model.S3ObjectSummary" %>
+
+
 
 <%@ include file="session.jsp" %>
 
@@ -36,10 +54,9 @@
 	Item it = new Item();
 	it.setSellerId(myUser.getId());
 	
-	File file;
 	int maxFileSize = 10000 * 1024;
 	int maxMemSize = 10000 * 1024;
-	String filePath = "D:\\workspace\\StorePlatform\\WebContent\\upload\\"; // TODO change
+	String filePath = "C:\\upload\\"; // TODO change
 	// Verify the content type
 	String contentType = request.getContentType();
 	if ((contentType.indexOf("multipart/form-data") >= 0)) {
@@ -60,12 +77,17 @@
 			while (i.hasNext()) {
 				FileItem fi = (FileItem) i.next();
 				if (!fi.isFormField()) {
+					
+					String bucketName = "imgmgordo";
+
 					// Get the uploaded file parameters
 					String fieldName = fi.getFieldName(); // "picture"
 					String fileName = fi.getName();
 					if (null != fileName && fileName.length() > 0) {
 						int index = fileName.lastIndexOf(".");
 						String ext;
+						
+						File file;
 						if (index > 0) {
 							ext = fileName.substring(index + 1);
 							ext = ext.toLowerCase();
@@ -79,6 +101,7 @@
 						boolean isInMemory = fi.isInMemory();
 						long sizeInBytes = fi.getSize();
 						// Write the file
+												
 						if (fileName.lastIndexOf("\\") >= 0) {
 							file = new File(filePath
 									+ fileName.substring(fileName
@@ -88,8 +111,14 @@
 									+ fileName.substring(fileName
 											.lastIndexOf("\\") + 1));
 						}
-						fi.write(file);
-						it.setPicture("upload/" + fileName);
+						
+						fi.write(file); // create the temporary file
+						
+						AmazonS3 s3 = new AmazonS3Client(new ClasspathPropertiesFileCredentialsProvider());
+						s3.putObject(bucketName, fileName, file);
+
+						it.setPicture("https://s3.amazonaws.com/imgmgordo/" + fileName);
+						
 					} // if null != filename
 				} else {
 					// process the form field 

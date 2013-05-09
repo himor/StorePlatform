@@ -10,6 +10,7 @@ import java.sql.*;
 public class Model {
 
 	private String 	mysql_server = 	"localhost";
+	//private String 	mysql_server = "192.168.56.1";
 	private int 	mysql_port = 	3306;
 	private String 	mysql_dbname = 	"uamarket";
 	private String 	mysql_user = 	"root";
